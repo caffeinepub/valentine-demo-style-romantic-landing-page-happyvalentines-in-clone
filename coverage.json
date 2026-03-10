@@ -1,0 +1,110 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T13:52:34.487Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 5,
+    "implemented": 5,
+    "items": [
+      {
+        "id": "REQ-5",
+        "summary": "Add a dedicated photo section to the Valentine landing experience with the section heading exactly: \"face of my heart\", and display the user-uploaded photos in that section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/PhotosSection.tsx",
+          "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "frontend/src/pages/ValentineLandingPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/PhotosSection.tsx",
+          "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "frontend/src/pages/ValentineLandingPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Add the uploaded images as static frontend assets and reference them from the new photos section using stable paths.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/Snapchat-374559267.jpg",
+          "frontend/public/assets/Snapchat-2137308291.jpg",
+          "frontend/public/assets/Snapchat-1819211754.jpg",
+          "frontend/src/components/valentine/PhotosSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/PhotosSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add a new final page/step at the end of the Valentine flow that displays the text exactly: \"will you be my valentine my rasmalai😍🫶\" with two options: Yes and No.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/components/valentine/FinalGreetingCard.tsx",
+          "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "frontend/src/pages/ValentineLandingPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/components/valentine/FinalGreetingCard.tsx",
+          "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "frontend/src/pages/ValentineLandingPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Make the \"No\" button effectively unpressable and implement a playful \"run away\" behavior when the user attempts to click/tap/hover it.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "When the user presses \"Yes\" on the proposal page, trigger a celebration theme with flowers falling from the top, hearts rising from the bottom, and show a popup message exactly: \"I knew you love me so much🥰🫶\".",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/components/valentine/CelebrationOverlay.tsx",
+          "frontend/src/components/valentine/SuccessPopup.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/valentine/ProposalStep.tsx",
+          "frontend/src/components/valentine/CelebrationOverlay.tsx",
+          "frontend/src/components/valentine/SuccessPopup.tsx",
+          "frontend/src/index.css"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/valentine/CelebrationOverlay.tsx",
+    "frontend/src/components/valentine/FinalGreetingCard.tsx",
+    "frontend/src/components/valentine/MessageRevealFlow.tsx",
+    "frontend/src/components/valentine/PhotosSection.tsx",
+    "frontend/src/components/valentine/ProposalStep.tsx",
+    "frontend/src/components/valentine/SuccessPopup.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/ValentineLandingPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

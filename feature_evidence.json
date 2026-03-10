@@ -1,0 +1,104 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-dedicated-photo-section-to-the-valentine-landing-experience-with-the-section-heading-exactly-face-of-my-heart-and-display-the-user-uploaded-photos-in-that-section",
+      "featureTitle": "Add a dedicated photo section to the Valentine landing experience with the section heading exactly: \"face of my heart\", and display the user-uploaded photos in that section.",
+      "files": [
+        "frontend/src/components/valentine/MessageRevealFlow.tsx",
+        "frontend/src/components/valentine/PhotosSection.tsx",
+        "frontend/src/pages/ValentineLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-uploaded-images-as-static-frontend-assets-and-reference-them-from-the-new-photos-section-using-stable-paths",
+      "featureTitle": "Add the uploaded images as static frontend assets and reference them from the new photos section using stable paths.",
+      "files": [
+        "frontend/src/components/valentine/PhotosSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-new-final-page-step-at-the-end-of-the-valentine-flow-that-displays-the-text-exactly-will-you-be-my-valentine-my-rasmalai-with-two-options-yes-and-no",
+      "featureTitle": "Add a new final page/step at the end of the Valentine flow that displays the text exactly: \"will you be my valentine my rasmalai😍🫶\" with two options: Yes and No.",
+      "files": [
+        "frontend/src/components/valentine/FinalGreetingCard.tsx",
+        "frontend/src/components/valentine/MessageRevealFlow.tsx",
+        "frontend/src/components/valentine/ProposalStep.tsx",
+        "frontend/src/pages/ValentineLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-no-button-effectively-unpressable-and-implement-a-playful-run-away-behavior-when-the-user-attempts-to-click-tap-hover-it",
+      "featureTitle": "Make the \"No\" button effectively unpressable and implement a playful \"run away\" behavior when the user attempts to click/tap/hover it.",
+      "files": [
+        "frontend/src/components/valentine/ProposalStep.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-when-the-user-presses-yes-on-the-proposal-page-trigger-a-celebration-theme-with-flowers-falling-from-the-top-hearts-rising-from-the-bottom-and-show-a-popup-message-exactly-i-knew-you-love-me-so-much",
+      "featureTitle": "When the user presses \"Yes\" on the proposal page, trigger a celebration theme with flowers falling from the top, hearts rising from the bottom, and show a popup message exactly: \"I knew you love me so much🥰🫶\".",
+      "files": [
+        "frontend/src/components/valentine/CelebrationOverlay.tsx",
+        "frontend/src/components/valentine/ProposalStep.tsx",
+        "frontend/src/components/valentine/SuccessPopup.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

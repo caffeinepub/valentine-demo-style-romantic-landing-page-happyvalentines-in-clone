@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main app component that renders the Valentine landing page without routing.",
+  "frontend/src/pages/ValentineLandingPage.tsx": "Main landing page with romantic background, floating hearts, message flow state management (now including photos and proposal steps), and footer with attribution.",
+  "frontend/src/components/valentine/FloatingHearts.tsx": "Decorative component that renders animated floating hearts and heart stickers across the page using CSS animations.",
+  "frontend/src/components/valentine/MessageRevealFlow.tsx": "State machine component managing the step-based interaction flow (intro, letter, messages, photos, final, proposal) with romantic messages and navigation between steps.",
+  "frontend/src/components/valentine/LoveLetterReveal.tsx": "Interactive envelope component that users click to reveal, with bounce-out animation on interaction.",
+  "frontend/src/components/valentine/FinalGreetingCard.tsx": "Final celebration card with romantic message, decorative hearts, quote, and action buttons (continue to proposal, restart, and share).",
+  "frontend/src/index.css": "Global styles with Valentine-themed OKLCH color palette (rose/pink tones), custom animations (float-up, fade-in, scale-in, fall-down, rise-up), and serif font for headings.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine color scheme, Playfair Display serif font, and increased border radius for softer romantic aesthetic.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are needed for this static Valentine landing page.",
+  "frontend/src/components/valentine/PhotosSection.tsx": "Dedicated photos section component displaying three uploaded images in a responsive grid with the heading \"face of my heart\" and a continue button.",
+  "frontend/src/components/valentine/ProposalStep.tsx": "Proposal step component displaying the exact proposal text with Yes/No buttons, where the No button moves away on interaction and Yes triggers celebration animations and success popup.",
+  "frontend/src/components/valentine/CelebrationOverlay.tsx": "Celebration overlay component that renders animated flowers falling from top and hearts rising from bottom using CSS animations with pointer-events disabled.",
+  "frontend/src/components/valentine/SuccessPopup.tsx": "Success popup modal component displaying the exact message \"I knew you love me so much🥰🫶\" with a close button using shadcn Dialog component."
+}

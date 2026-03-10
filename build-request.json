@@ -1,0 +1,114 @@
+{
+  "kind": "build_request",
+  "title": "Add photo gallery section and final Valentine proposal page with playful Yes/No interaction",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Add a dedicated photo section to the Valentine landing experience with the section heading exactly: \"face of my heart\", and display the user-uploaded photos in that section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "I want a different section of photos and the heading of that section should be \"face of my heart\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new photos section exists in the Valentine UI flow and is reachable by normal progression (or clearly placed on the page) without breaking the existing intro/letter/message/final experience.",
+        "The photos section heading text matches exactly: \"face of my heart\".",
+        "The three uploaded images are rendered in the section in a responsive layout (mobile and desktop).",
+        "Images load from static frontend assets (not via backend calls)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add the uploaded images as static frontend assets and reference them from the new photos section using stable paths.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "The user has uploaded 3 image(s): Snapchat-374559267.jpg, Snapchat-2137308291.jpg, Snapchat-1819211754.jpg."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The following files exist under the frontend public static assets and are used by the UI: Snapchat-374559267.jpg, Snapchat-2137308291.jpg, Snapchat-1819211754.jpg.",
+        "No build-time or runtime errors occur due to missing image files.",
+        "Images are displayed with correct orientation/fit (no unintended stretching), and include basic accessibility attributes (e.g., non-empty alt text or intentionally empty alt if purely decorative)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a new final page/step at the end of the Valentine flow that displays the text exactly: \"will you be my valentine my rasmalai😍🫶\" with two options: Yes and No.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "also add a page at the end in which will be written \"will you be my valentine my rasmalai😍🫶\" and bottom of it there should be 2 options yes and no"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After completing the existing flow, the user reaches a final proposal page/step.",
+        "The proposal text is displayed exactly as provided: \"will you be my valentine my rasmalai😍🫶\".",
+        "Two buttons/options are visible: \"Yes\" and \"No\"."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Make the \"No\" button effectively unpressable and implement a playful \"run away\" behavior when the user attempts to click/tap/hover it.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "make the no button unpressable and if you tried to click it will run away"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Attempting to interact with the \"No\" button (mouse hover, click, or touch) causes the button to move away so it cannot be easily pressed.",
+        "The \"No\" button does not trigger any navigation or success action.",
+        "The behavior works on both desktop (mouse) and mobile (touch) without causing layout breaks or scrolling the page unexpectedly."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "When the user presses \"Yes\" on the proposal page, trigger a celebration theme with flowers falling from the top, hearts rising from the bottom, and show a popup message exactly: \"I knew you love me so much🥰🫶\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ],
+        "quotes": [
+          "if she press yes make a theme like flowers falling from the up and hearts rising from bottom and a pop up comes of \"I knew you love me so much🥰🫶\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking \"Yes\" triggers simultaneous animations: flowers falling from the top and hearts rising from the bottom.",
+        "A popup/modal appears containing exactly: \"I knew you love me so much🥰🫶\".",
+        "The celebration visuals do not block the popup readability and can be dismissed or naturally conclude without requiring a page refresh.",
+        "The interaction does not break the existing restart/share functionality elsewhere in the app (if still present)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not modify files under frontend/src/components/ui or other immutablePaths listed in SYSTEM_CONTEXT; compose those components instead if needed.",
+    "Do not introduce new backend dependencies; backend/main.mo can remain unchanged unless strictly necessary.",
+    "Keep the app as a single React app (no Next.js, no external databases, no third-party auth beyond existing Internet Identity hooks).",
+    "All user-facing strings specified by the user must match exactly as provided (including emojis and casing)."
+  ],
+  "nonGoals": [
+    "Adding user accounts, admin panels, or saving photo uploads to canister storage.",
+    "Integrating third-party analytics, social APIs, or external hosting services.",
+    "Building multi-page routing beyond what is necessary to present the final proposal page/step within the existing flow."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

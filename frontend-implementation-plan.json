@@ -1,0 +1,149 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine flow: photo gallery section + proposal step with playful No + celebration on Yes",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Add a dedicated photos section titled \"face of my heart\" into the Valentine flow and render the 3 uploaded photos responsively.",
+      "acceptanceCriteria": [
+        "A new photos section exists in the Valentine UI flow and is reachable by normal progression (or clearly placed on the page) without breaking the existing intro/letter/message/final experience.",
+        "The photos section heading text matches exactly: \"face of my heart\".",
+        "The three uploaded images are rendered in the section in a responsive layout (mobile and desktop).",
+        "Images load from static frontend assets (not via backend calls)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/PhotosSection.tsx",
+          "operation": "create",
+          "description": "Create a dedicated PhotosSection component that renders the section heading exactly \"face of my heart\" and displays the three static images in a responsive grid with appropriate object-fit and accessibility attributes."
+        },
+        {
+          "path": "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "operation": "modify",
+          "description": "Extend the existing step-based flow to include a new photos step and render PhotosSection as part of the normal progression without breaking the intro/letter/messages/final experience (ensure the step transition reaches the new photos section)."
+        },
+        {
+          "path": "frontend/src/pages/ValentineLandingPage.tsx",
+          "operation": "modify",
+          "description": "Update the page-level step state union/type to include the new photos step and ensure the flow remains reachable and correctly wired through MessageRevealFlow."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add the 3 uploaded images as static public assets and reference them via stable paths from the photos section.",
+      "acceptanceCriteria": [
+        "The following files exist under the frontend public static assets and are used by the UI: Snapchat-374559267.jpg, Snapchat-2137308291.jpg, Snapchat-1819211754.jpg.",
+        "No build-time or runtime errors occur due to missing image files.",
+        "Images are displayed with correct orientation/fit (no unintended stretching), and include basic accessibility attributes (e.g., non-empty alt text or intentionally empty alt if purely decorative)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/Snapchat-374559267.jpg",
+          "operation": "create",
+          "description": "Add the uploaded image file as a static public asset at a stable path for UI usage."
+        },
+        {
+          "path": "frontend/public/assets/Snapchat-2137308291.jpg",
+          "operation": "create",
+          "description": "Add the uploaded image file as a static public asset at a stable path for UI usage."
+        },
+        {
+          "path": "frontend/public/assets/Snapchat-1819211754.jpg",
+          "operation": "create",
+          "description": "Add the uploaded image file as a static public asset at a stable path for UI usage."
+        },
+        {
+          "path": "frontend/src/components/valentine/PhotosSection.tsx",
+          "operation": "modify",
+          "description": "Reference the images using stable public paths (from frontend/public/assets) and ensure images use non-stretching fit (e.g., cover/contain) and include appropriate alt text."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add a new final proposal page/step showing the exact proposal text and Yes/No options at the end of the Valentine flow.",
+      "acceptanceCriteria": [
+        "After completing the existing flow, the user reaches a final proposal page/step.",
+        "The proposal text is displayed exactly as provided: \"will you be my valentine my rasmalai😍🫶\".",
+        "Two buttons/options are visible: \"Yes\" and \"No\"."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/ProposalStep.tsx",
+          "operation": "create",
+          "description": "Create a ProposalStep component that displays the exact text \"will you be my valentine my rasmalai😍🫶\" and presents two visible options/buttons: \"Yes\" and \"No\"."
+        },
+        {
+          "path": "frontend/src/components/valentine/FinalGreetingCard.tsx",
+          "operation": "modify",
+          "description": "Add a clear progression action (e.g., a continue button) that advances from the existing final greeting card to the new proposal step without removing or breaking existing restart/share behavior."
+        },
+        {
+          "path": "frontend/src/components/valentine/MessageRevealFlow.tsx",
+          "operation": "modify",
+          "description": "Wire the new proposal step as the last step in the flow so that, after the existing flow completes (including the final greeting card), the user reaches ProposalStep."
+        },
+        {
+          "path": "frontend/src/pages/ValentineLandingPage.tsx",
+          "operation": "modify",
+          "description": "Update the step state union/type to include the new proposal step and ensure it is reachable at the end of the flow."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Make the \"No\" option effectively unpressable by adding a playful run-away interaction on hover/click/touch.",
+      "acceptanceCriteria": [
+        "Attempting to interact with the \"No\" button (mouse hover, click, or touch) causes the button to move away so it cannot be easily pressed.",
+        "The \"No\" button does not trigger any navigation or success action.",
+        "The behavior works on both desktop (mouse) and mobile (touch) without causing layout breaks or scrolling the page unexpectedly."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/ProposalStep.tsx",
+          "operation": "modify",
+          "description": "Implement a run-away \"No\" button: use a bounded container with relative positioning and move the \"No\" button to a new safe position on hover, pointer down, and touch start; ensure it does not trigger navigation/success and avoids unexpected scrolling/layout shifts."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add any minimal supporting utility animations or classes needed for smooth \"No\" button motion (keep changes within existing global stylesheet entry point and avoid modifying immutable ui components)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "On \"Yes\", trigger flowers falling from the top, hearts rising from the bottom, and show a popup with the exact success message.",
+      "acceptanceCriteria": [
+        "Clicking \"Yes\" triggers simultaneous animations: flowers falling from the top and hearts rising from the bottom.",
+        "A popup/modal appears containing exactly: \"I knew you love me so much🥰🫶\".",
+        "The celebration visuals do not block the popup readability and can be dismissed or naturally conclude without requiring a page refresh.",
+        "The interaction does not break the existing restart/share functionality elsewhere in the app (if still present)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/valentine/ProposalStep.tsx",
+          "operation": "modify",
+          "description": "When \"Yes\" is pressed, trigger celebratory overlay effects (flowers falling from top and hearts rising from bottom) and show a readable popup/modal containing exactly \"I knew you love me so much🥰🫶\"; allow dismissal and/or automatic conclusion without refresh, and keep existing restart/share elsewhere unaffected."
+        },
+        {
+          "path": "frontend/src/components/valentine/CelebrationOverlay.tsx",
+          "operation": "create",
+          "description": "Create a reusable CelebrationOverlay component that renders animated flowers (top-to-bottom) and hearts (bottom-to-top) using CSS animations and pointer-events disabled so it does not interfere with the popup."
+        },
+        {
+          "path": "frontend/src/components/valentine/SuccessPopup.tsx",
+          "operation": "create",
+          "description": "Create a simple popup/modal component used by ProposalStep to display the exact message \"I knew you love me so much🥰🫶\" and provide a clear close/dismiss action."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add keyframes/classes for the falling-flowers and rising-hearts animations and any needed overlay/popup layering to ensure effects do not block popup readability."
+        }
+      ]
+    }
+  ]
+}

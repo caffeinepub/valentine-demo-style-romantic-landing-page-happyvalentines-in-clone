@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a romantic Valentine-style landing page like the HappyValentines.in demo, plus a dedicated photo section and an interactive final proposal page with playful yes/no behavior and celebratory animations.",
+  "architectural_notes": [
+    "Add an end-page interactive CTA with a runaway \"No\" button and a \"Yes\" success state that triggers layered animations (falling flowers + rising hearts) plus a modal/popup message."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-valentine-style-landing-website-that-closely-matches-the-look-feel-layout-and-interaction-flow-of-https-happyvalentines-in-demo-including-comparable-romantic-animations-and-interactive-message-reveals",
+      "title": "Create a single-page Valentine-style landing website that closely matches the look, feel, layout, and interaction flow of https://happyvalentines.in/demo, including comparable romantic animations and interactive message reveals.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-responsive-design-for-the-valentine-landing-page-so-it-works-well-on-mobile-small-screens-tablet-and-desktop-preserving-the-reference-demo-s-visual-hierarchy-and-spacing",
+      "title": "Implement responsive design for the Valentine landing page so it works well on mobile (small screens), tablet, and desktop, preserving the reference demo’s visual hierarchy and spacing.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-coherent-creative-visual-theme-colors-typography-spacing-and-component-styling-appropriate-for-a-romantic-valentine-landing-page-and-apply-it-consistently-across-the-page-avoid-a-default-template-look",
+      "title": "Add a coherent, creative visual theme (colors, typography, spacing, and component styling) appropriate for a romantic Valentine landing page, and apply it consistently across the page (avoid a default/template look).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-generated-image-assets-to-the-frontend-as-static-files-under-frontend-public-assets-generated-and-use-them-in-the-valentine-landing-page-ui-where-appropriate",
+      "title": "Add the generated image assets to the frontend as static files under frontend/public/assets/generated and use them in the Valentine landing page UI where appropriate.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dedicated-photo-section-to-the-valentine-landing-experience-with-the-section-heading-exactly-face-of-my-heart-and-display-the-user-uploaded-photos-in-that-section",
+      "title": "Add a dedicated photo section to the Valentine landing experience with the section heading exactly: \"face of my heart\", and display the user-uploaded photos in that section.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-images-as-static-frontend-assets-and-reference-them-from-the-new-photos-section-using-stable-paths",
+      "title": "Add the uploaded images as static frontend assets and reference them from the new photos section using stable paths.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-final-page-step-at-the-end-of-the-valentine-flow-that-displays-the-text-exactly-will-you-be-my-valentine-my-rasmalai-with-two-options-yes-and-no",
+      "title": "Add a new final page/step at the end of the Valentine flow that displays the text exactly: \"will you be my valentine my rasmalai😍🫶\" with two options: Yes and No.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-no-button-effectively-unpressable-and-implement-a-playful-run-away-behavior-when-the-user-attempts-to-click-tap-hover-it",
+      "title": "Make the \"No\" button effectively unpressable and implement a playful \"run away\" behavior when the user attempts to click/tap/hover it.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-presses-yes-on-the-proposal-page-trigger-a-celebration-theme-with-flowers-falling-from-the-top-hearts-rising-from-the-bottom-and-show-a-popup-message-exactly-i-knew-you-love-me-so-much",
+      "title": "When the user presses \"Yes\" on the proposal page, trigger a celebration theme with flowers falling from the top, hearts rising from the bottom, and show a popup message exactly: \"I knew you love me so much🥰🫶\".",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website replicating the look/feel and interactions of https://happyvalentines.in/demo (romantic landing page with animations and interactive messages).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add a dedicated photos section titled \"face of my heart\" to display the user's uploaded photos.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add a final proposal page: display text \"will you be my valentine my rasmalai😍🫶\" with Yes/No buttons; No is unpressable and runs away on attempt; Yes triggers flowers falling from top, hearts rising from bottom, and a popup saying \"I knew you love me so much🥰🫶\".",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Valentine demo-style romantic landing page (HappyValentines.in clone)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
